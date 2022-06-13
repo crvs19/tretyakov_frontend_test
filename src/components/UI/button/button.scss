@@ -1,0 +1,96 @@
+.button {
+	@extend .transition-active;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	height: 40px;
+	font-weight: 400;
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 1px 30px 0;
+	background-color: $color-primary;
+	color: $color-white;
+	box-sizing: border-box;
+	border-radius: 3px;
+
+	&_white {
+		background-color: $color-white;
+		color: $color-black;
+		border: 1px solid $color-active;
+	}
+
+	&_burger {
+		padding: 0;
+		border-radius: 0;
+		background-color: transparent;
+		height: 22px;
+		width: 29px;
+		position: relative;
+		z-index: 11;
+
+		span {
+			width: 29px;
+			height: 2px;
+			background-color: $color-black;
+			display: block;
+			position: absolute;
+			transition: $transition-base;
+
+			&:first-of-type {
+				top: 0;
+			}
+
+			&:last-of-type {
+				bottom: 0;
+			}
+		}
+
+		&._active {
+			
+			span {
+
+				&:first-of-type {
+					top: 10px;
+					transform: rotate(45deg);
+				}
+
+				&:nth-of-type(2){
+					opacity: 0;
+				}
+	
+				&:last-of-type {
+					bottom: 10px;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+
+	&:hover {
+		background-color: rgba($color-black, $duration-base);
+		color: rgba($color-white, 0.8);
+		transition: none;
+
+		&.button_burger {
+			background-color: transparent;
+
+			span {
+				background-color: $color-shady;
+			}
+		}
+	}
+
+	&:active {
+		background-color: rgba($color-primary, $duration-base);
+
+		&.button_burger {
+			background-color: transparent;
+
+			span {
+				background-color: $color-shady;
+			}
+		}
+	}
+}

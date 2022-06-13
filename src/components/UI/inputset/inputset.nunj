@@ -1,0 +1,15 @@
+{% macro inputset(props) %}
+<div class="{% if props.className %}inputset {{ props.className }}{% endif %}" >
+	{% if props.label %} <label>{{ props.label }}</label>{% endif %}
+	<div class="inputset__row">
+		{% for i in range(0, props.amount)  %}
+			<input 
+				{% if props.type %}type="{{ props.type }}"{% endif %} 
+				{% if props.pattern %}pattern="{{ props.pattern }}"{% endif %} 
+				{% if props.maxlength %}maxlength="{{ props.maxlength }}"{% endif %}
+				{% if props.amount %}name="setinput{{ i }}"{% endif %}
+			>
+		{% endfor %}
+	</div>
+</div>
+{% endmacro %}

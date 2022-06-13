@@ -1,0 +1,37 @@
+<header class="header">
+	<div class="container header__container">
+		<a class="logo header__link" href="/" title="spshop">
+			{{ icon({
+				iconName: 'Logo',
+				className: 'icon',
+				attributes: 'style="width: 89px; height: 32px;"'
+			}) }}
+		</a>
+		{{ menu() }}
+		<div class="header__right">
+			<a class="search-trigger header__link" href="#" title="Search">
+				{{ icon({
+					iconName: 'Search',
+					className: 'icon',
+					attributes: 'style="width: 24px; height: 24px;"'
+				}) }}
+			</a>
+
+			<a class="cart-trigger header__link" href="#" title="Cart">
+				{{ icon({
+					iconName: 'Cart',
+					className: 'icon',
+					attributes: 'style="width: 24px; height: 21px;"'
+				}) }}
+				<span class="cart-trigger__counter shopping-counter{% if goodsInCart.length > 0 %} _active{% endif %}">{{goodsInCart.length}}</span>
+			</a>
+
+			{{ button({
+				className: 'button_burger header__burger mobile-only',
+				children: '<span></span><span></span><span></span>',
+				title: 'Menu',
+				type: 'button'
+			}) }}
+		</div>
+	</div>
+</header>

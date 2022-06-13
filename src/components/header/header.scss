@@ -1,0 +1,66 @@
+.header {
+	padding: 26px 30px 23px;
+	background: $color-white;
+	border-bottom: 1px solid $color-active;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__right {
+		display: flex;
+		align-items: center;
+	}
+
+	&__link {
+
+		&:nth-of-type(2){
+			margin: 0 0 0 26px;
+		}
+		
+		.icon {
+			transition: $transition-base;
+			fill: $color-black;
+		}
+
+		&:hover {
+
+			.icon {
+				fill: $color-shady;
+			}
+		}
+	}
+
+	&__burger {
+		margin: 0 0 0 26px;
+	}
+}
+
+.cart-trigger {
+	position: relative;
+
+	&__counter {
+		top: -6px;
+		right: -6px;
+	}
+}
+
+.shopping-counter {
+	background-color: $color-primary;
+	color: $color-white;
+	position: absolute;
+	display: none;
+	font-size: 10px;
+	line-height: 12px;
+	width: 13px;
+	height: 13px;
+	border-radius: 13px;
+
+	&._active {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

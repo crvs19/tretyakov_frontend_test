@@ -1,0 +1,118 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../../components/menu/menu.nunj" import menu %}
+{% from "../../components/UI/button/button.nunj" import button %}
+{% from "../../components/UI/checkbox/checkbox.nunj" import checkbox %}
+{% from "../../components/UI/radio/radio.nunj" import radio %}
+{% from "../../components/UI/inputgroup/inputgroup.nunj" import inputgroup %}
+{% from "../../components/UI/inputset/inputset.nunj" import inputset %}
+{% from "../../components/progressbar/progressbar.nunj" import progressbar %}
+{% from "../../components/icon/icon.nunj" import icon %}
+
+{% block content %}
+
+	{% include '../../components/header/header.nunj' %}
+
+	<main class="page billing">
+
+		<div class="container billing__container">
+
+			<section class="billing__body">
+				
+				{{ progressbar({
+					className: 'billing__progressbar'
+				}) }}
+
+				<form class="billing__form">
+					<h3 class="billing__heading heading">Billing Information</h3>
+					<div class="billing__radios">
+						{{ radio({
+							label: 'Pay with Credit Card',
+							id: 'cardoption',
+							name: 'billingoption'
+						}) }}
+						{{ radio({
+							className: 'radio_with-pic',
+							label: '<img src="../../assets/images/Paypal.png">',
+							id: 'paypaloption',
+							name: 'billingoption'
+						}) }}
+					</div>
+
+					<div class="billing__card card">
+						{{ inputgroup({
+							className: 'card__input_wide',
+							label: 'Name on card',
+							type: 'text',
+							name: 'keepername',
+							title: 'Name Surname',
+							required: 'true',
+							autocomplete: 'on',
+							placeholder: 'Placeholder Text'
+						}) }}
+						{{ inputset({
+							className: 'card__inputset',
+							label: 'Card number',
+							type: 'text',
+							pattern: '[0-9][0-9][0-9][0-9]',
+							amount: '4',
+							maxlength: '4'
+						}) }}
+						{{ inputgroup({
+							className: 'card__input',
+							label: 'Expire date',
+							type: 'text',
+							name: 'expire',
+							title: 'Mouth/Year',
+							required: 'true',
+							autocomplete: 'on',
+							pattern: '[0-9]{2}[/]{1}[0-9]{2}'
+						}) }}
+						{{ inputgroup({
+							className: 'card__input',
+							type: 'text',
+							name: 'cvv',
+							label: 'CVV code',
+							title: 'Three digits',
+							required: 'true',
+							autocomplete: 'on',
+							pattern: '[0-9][0-9][0-9]',
+							tooltip: '3 digit number on the back side of your card'
+						}) }}
+					</div>
+
+					<div class="billing__checkboxes">
+						{{ checkbox({
+							label: 'Save information of this credit card',
+							id: 'savecard',
+							name: 'savecard'
+						}) }}
+						{{ checkbox({
+							label: 'I accept the <a href="#">terms and comditions</a> and the <a href="#">Privacy Policies</a>',
+							id: 'policies',
+							name: 'policies'
+						}) }}
+					</div>
+
+					<div class="billing__buttons">
+						{{ button({
+							className: 'button_white',
+							children: 'Back',
+							title: 'Back',
+							type: 'button'
+						}) }}
+						{{ button({
+							children: 'Check out',
+							title: 'Check out',
+							type: 'submit'
+						}) }}
+					</div>
+					
+				</form>
+			</section>
+
+			{% include '../../components/my-basket/my-basket.nunj' %}
+
+		</div>
+	</main>
+{% endblock content %}

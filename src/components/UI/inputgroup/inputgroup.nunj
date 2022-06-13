@@ -1,0 +1,22 @@
+{% macro inputgroup(props) %}
+<div class="inputgroup {% if props.className %}{{ props.className }}{% endif %}" >
+	{% if props.label %} <label>
+		{{ props.label }}
+		{% if props.tooltip %} <span class="inputgroup__tooltip tooltip">
+			?
+			<p class="tooltip__body">{{ props.tooltip }}</p>
+		</span>{% endif %}
+	</label>{% endif %}
+	<input 
+		{% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %}
+		{% if props.type %}type="{{ props.type }}"{% endif %}
+		{% if props.pattern %}pattern="{{ props.pattern }}" {% endif %}
+		{% if props.name %}name="{{ props.name }}"{% endif %}
+		{% if props.title %}title="{{ props.title }}"{% endif %}
+		{% if props.autocomplete %}autocomplete="{{ props.autocomplete }}"{% endif %}
+		{% if props.required %}required="{{ props.required }}"{% endif %}
+		>
+	</input>
+	<p class="inputgroup__message">Message text</p>
+</div>
+{% endmacro %}

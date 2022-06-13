@@ -1,0 +1,12 @@
+{% macro progressbar(props) %}
+<div class="progressbar {% if props.className %} {{ props.className }}{% endif %}">
+	{% for item in progressData %}
+		<div class="progressbar__item">
+			<div class="progressbar__number">
+				<span>{{ item.number }}</span>
+			</div>
+			<p class="progressbar__text">{{ item.text }}</p>
+		</div>
+	{% endfor %}
+</div>
+{% endmacro %}

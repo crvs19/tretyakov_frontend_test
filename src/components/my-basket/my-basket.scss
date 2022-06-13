@@ -1,0 +1,171 @@
+.my-basket {
+	width: 100%;
+
+	& > * {
+		padding: 40px;
+	}
+	
+	&__heading {
+		margin: 0 0 30px 0;
+	}
+
+	&__products,
+	&__promo {
+		border-bottom: 1px solid $color-active;
+	}
+
+	&__product {
+		margin-bottom: 40px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.counter {
+	display: flex;
+	align-items: center;
+
+	&__num {
+		margin-inline: 17px;
+
+		._edge & {
+			margin-left: 17px;
+			margin-right: 17px;
+		}
+	}
+}
+
+.product {
+	display: flex;
+	max-width: 330px;
+	min-height: 100px;
+	width: 100%;
+	position: relative;
+	
+	&__col {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__row {
+		display: flex;
+		align-items: center;
+	}
+
+	&__image {
+		object-fit: cover;
+		width: 100%;
+		height: auto;
+
+		&-wrapper {
+			width: 100px;
+			height: 100px;
+			border-radius: 3px;
+			overflow: hidden;
+			margin-right: 12px;
+		}
+	}
+
+	&__name {
+		min-height: 45px;
+		max-width: 150px;
+	}
+
+	&__counter {
+		margin-right: 25px;
+	}
+
+	&__button {
+		background-color: transparent;
+		border: none;
+		padding: 0;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		
+		.icon {
+			fill: $color-black;
+			transition: $transition-base;
+
+			._ff & {
+				width: 110%;
+				height: 110%;
+				object-fit: contain;
+			}
+		}
+
+		&:hover {
+
+			.icon {
+				transition: none;
+				fill: $color-active;
+			}
+		}
+
+		&:active {
+
+			.icon {
+				transition: none;
+				fill: $color-black;
+			}
+		}
+	}
+
+	&__remove {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 18px;
+		height: 18px;
+
+		.icon {
+			fill: $color-active;
+		}
+
+		&:hover {
+
+			.icon {
+				fill: $color-black;
+			}
+		}
+		
+		&:active {
+
+			.icon {
+				transition: none;
+				fill: $color-active;
+			}
+		}
+	}
+}
+
+.promo {
+	display: flex;
+	align-items: center;
+
+	&__inputgroup {
+		width: 225px;
+	}
+
+	&__button {
+		margin: 0 0 0 10px;
+	}
+}
+
+.price-summary {
+
+	&__row {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		justify-content: space-between;
+		line-height: 34px;
+	}
+
+	&__total {
+		font-size: 18px;
+		font-weight: 700;
+	}
+}

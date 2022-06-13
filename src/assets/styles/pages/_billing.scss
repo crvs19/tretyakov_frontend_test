@@ -1,0 +1,160 @@
+.billing {
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	&__body {
+		width: 100%;
+		padding: 60px 50px;
+		max-width: calc(100% - 410px);
+		display: flex;
+		flex-direction: column;
+		min-height: calc(100vh - 86px);
+
+		@include devices {
+			max-width: 100%;
+		}
+
+		@include desktop-xl {
+			align-items: center;
+		}
+	}
+
+	&__progressbar {
+		margin-bottom: 60px;
+
+		&::after {
+			width: 65%;
+		}
+
+		.progressbar__item {
+
+			&:first-of-type,
+			&:nth-of-type(2) {
+
+				.progressbar__number {
+					background-color: $color-primary;
+					color: $color-white;
+				}
+			}
+
+			&:last-of-type {
+
+				.progressbar__number {
+					border-color: $color-appearance;
+					color: $color-appearance;
+				}
+			}
+		}
+	}
+
+	&__heading {
+		margin: 0 0 43px 0;
+	}
+
+	&__radios {
+		margin-bottom: 43px;
+		display: flex;
+		align-items: center;
+
+		.radio_with-pic {
+			margin-left: 82px;
+
+			img {
+				display: block;
+				width: 85px;
+				height: 23px;
+			}
+		}
+	}
+
+	&__checkboxes {
+		margin-bottom: 40px;
+		display: flex;
+		flex-direction: column;
+		
+		.checkbox {
+
+			&:first-of-type {
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	&__buttons {
+		max-width: 630px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include devices {
+			padding-right: 30px;
+		}
+	}
+
+	&__form {
+
+		& > * {
+			margin-left: 30px;
+		}
+	}
+
+	&__card {
+		margin-bottom: 41px;
+		margin-left: 0;
+	}
+	
+	.my-basket {
+		max-width: 410px;
+		border-left: 1px solid $color-active;
+		min-height: calc(100vh - 86px);
+
+		@include devices {
+			display: none;
+		}
+	}
+}
+
+.card {
+	background-color: $color-white;
+	padding: 20px 30px 46px;
+	max-width: 550px;
+	width: 100%;
+	border-radius: 5px;
+	box-shadow: $shadow;
+	display: flex;
+	flex-flow: wrap;
+
+	&__inputset {
+		margin-bottom: 20px;
+		
+		input {
+			margin-right: 30px;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__input {
+		width: 100%;
+		max-width: 100px;
+		margin-right: 30px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&_wide {
+			max-width: 100%;
+			margin-bottom: 20px;
+			margin-right: 0;
+		}
+	}
+}

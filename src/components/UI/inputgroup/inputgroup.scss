@@ -1,0 +1,103 @@
+.inputgroup {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+
+	label {
+		margin-bottom: 8px;
+		color: $color-input;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 24px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	input {
+		background-color: $color-accent;
+		border-radius: 3px;
+		border: 1px solid $color-accent;
+		transition: $transition-base;
+		padding: 8px 10px;
+		font-size: 14px;
+		line-height: 24px;
+		color: $color-input;
+		width: 100%;
+
+		&:focus {
+			outline: none;
+			border-color: $color-primary;
+			transition: none;
+		}
+
+		&::placeholder {
+			color: $color-assist;
+		}
+	}
+
+	&._error {
+
+		input {
+			border-color: $color-error;
+		}
+	}
+
+	&__tooltip {
+		margin: 0 0 0 5px;
+	}
+
+	&__message {
+		font-size: 12px;
+		display: none;
+		margin-top: 6px;
+		
+		._error & {
+			color: $color-error;
+			display: block;
+		}
+	}
+}
+
+.tooltip {
+	position: relative;
+	width: 13px;
+	height: 13px;
+	border-radius: 13px;
+	background-color: $color-accent;
+	display: inline-block;
+	line-height: 1em;
+	font-size: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: none;
+	transition: $transition-base;
+
+	&__body {
+		position: absolute;
+		width: auto;
+		min-width: 210px;
+		opacity: 0;
+		pointer-events: none;
+		left: 0;
+		background-color: $color-accent;
+		height: 13px;
+		border-radius: 13px;
+		padding-inline: 3px;
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&:hover {
+		
+		.tooltip__body {
+			opacity: 1;
+			transition: none;
+			pointer-events: all;
+		}
+	}
+}

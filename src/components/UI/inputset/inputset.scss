@@ -5,7 +5,6 @@
 	width: 100%;
 
 	label {
-		margin-bottom: 8px;
 		color: $color-input;
 		font-weight: 500;
 		font-size: 12px;
@@ -31,6 +30,7 @@
 		color: $color-input;
 		width: 100%;
 		max-width: 100px;
+		height: 40px;
 	
 		&:focus {
 			outline: none;

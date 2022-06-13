@@ -8,6 +8,7 @@
 				{% if props.pattern %}pattern="{{ props.pattern }}"{% endif %} 
 				{% if props.maxlength %}maxlength="{{ props.maxlength }}"{% endif %}
 				{% if props.amount %}name="setinput{{ i }}"{% endif %}
+				{% if props.title %}title="{{ props.title }}"{% endif %}
 			>
 		{% endfor %}
 	</div>

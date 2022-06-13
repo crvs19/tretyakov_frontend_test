@@ -7,6 +7,7 @@ class MyBasket {
 		this.tax = this.element.querySelector('#tax-value');
 		this.shipping = this.element.querySelector('#shipping-value');
 		this.total = this.element.querySelector('#total-value');
+		this.headerCart = document.querySelector('.shopping-counter');
 
 		this.externalAgents = {
 			tax: 100,
@@ -82,8 +83,10 @@ class MyBasket {
 				this.calculateSummary();
 				product.remove();
 				this.productsAmount -= 1;
+				this.headerCart.innerHTML = this.productsAmount;
 				if (this.productsAmount === 0) {
 					this.element.classList.add(this.classNames.emptyState);
+					this.headerCart.classList.remove('_active');
 				}
 			};
 

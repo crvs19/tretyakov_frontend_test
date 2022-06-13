@@ -54,6 +54,7 @@
 							className: 'card__inputset',
 							label: 'Card number',
 							type: 'text',
+							title: 'Four digits: 1234',
 							pattern: '[0-9][0-9][0-9][0-9]',
 							amount: '4',
 							maxlength: '4'
@@ -63,7 +64,7 @@
 							label: 'Expire date',
 							type: 'text',
 							name: 'expire',
-							title: 'Mouth/Year',
+							title: 'Mouth/Year: 12/95',
 							required: 'true',
 							autocomplete: 'on',
 							pattern: '[0-9]{2}[/]{1}[0-9]{2}'
@@ -73,7 +74,7 @@
 							type: 'text',
 							name: 'cvv',
 							label: 'CVV code',
-							title: 'Three digits',
+							title: 'Three digits: 123',
 							required: 'true',
 							autocomplete: 'on',
 							pattern: '[0-9][0-9][0-9]',

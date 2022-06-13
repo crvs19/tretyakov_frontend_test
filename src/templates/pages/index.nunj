@@ -33,7 +33,7 @@
 						}) }}
 						{{ radio({
 							className: 'radio_with-pic',
-							label: '<img src="../../assets/images/Paypal.png">',
+							label: '<img src="assets/images/Paypal.png">',
 							id: 'paypaloption',
 							name: 'billingoption'
 						}) }}

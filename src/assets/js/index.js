@@ -17,6 +17,7 @@ class ProjectApp {
 			Signal: require('./classes/Signal').default,
 			Burger: require('./classes/Burger').default,
 			CardNumber: require('./classes/CardNumber').default,
+			MyBasket: require('./classes/MyBasket').default,
 		};
 		this.components = {};
 		this.helpers = {};
@@ -29,6 +30,9 @@ class ProjectApp {
 
 			const enterCardNumber = new this.classes.CardNumber('card__inputset');
 			enterCardNumber.init();
+
+			const basketActions = new this.classes.MyBasket('.my-basket');
+			basketActions.init();
 		});
 	}
 }

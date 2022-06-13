@@ -2,10 +2,11 @@
 <div class="checkbox{% if props.className %} {{ props.className }}{% endif %}">
 	<input 
 		class="checkbox__input" 
-		id="{% if props.id %} {{ props.id }}{% endif %}" 
 		type="checkbox" 
-		name="{% if props.name %} {{ props.name }}{% endif %}"
+		{% if props.required %}required="{{ props.required }}"{% endif %} 
+		{% if props.id %}id="{{ props.id }}"{% endif %} 
+		{% if props.name %}name="{{ props.name }}"{% endif %}
 		>
-	<label class="checkbox__label" for="{% if props.id %} {{ props.id }}{% endif %}">{{ props.label }}</label>
+	<label class="checkbox__label" {% if props.id %}for="{{ props.id }}"{% endif %}>{{ props.label }}</label>
 </div>
 {% endmacro %}

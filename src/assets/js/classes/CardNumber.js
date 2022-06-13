@@ -9,10 +9,6 @@ class CardNumber {
 		this.inputs.forEach(item => item.addEventListener('input', () => this.inputHandler(item)));
 	}
 
-	destroy() {
-		this.inputs.forEach(item => item.removeEventListener('input'));
-	}
-
 	inputHandler(inputElement) {
 		const nextInput = inputElement.nextElementSibling;
 		if (inputElement.value.length >= 4 && nextInput) {

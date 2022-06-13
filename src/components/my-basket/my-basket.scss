@@ -21,6 +21,14 @@
 			margin-bottom: 0;
 		}
 	}
+
+	&__empty-state-message {
+		display: none;
+
+		._empty & {
+			display: inline-block;
+		}
+	}
 }
 
 .counter {
@@ -88,6 +96,8 @@
 		.icon {
 			fill: $color-black;
 			transition: $transition-base;
+			max-width: 110%;
+			max-height: 110%;
 
 			._ff & {
 				width: 110%;

@@ -2,10 +2,10 @@
 <div class="radio{% if props.className %} {{ props.className }}{% endif %}">
 	<input 
 		class="radio__input" 
-		id="{% if props.id %} {{ props.id }}{% endif %}" 
 		type="radio" 
-		name="{% if props.name %} {{ props.name }}{% endif %}"
+		{% if props.id %}id="{{ props.id }}"{% endif %} 
+		{% if props.name %}name="{{ props.name }}"{% endif %}
 		>
-	<label class="radio__label" for="{% if props.id %} {{ props.id }}{% endif %}">{{ props.label }}</label>
+	<label class="radio__label" {% if props.id %}for="{{ props.id }}"{% endif %}>{{ props.label }}</label>
 </div>
 {% endmacro %}
